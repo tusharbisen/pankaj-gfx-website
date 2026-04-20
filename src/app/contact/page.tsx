@@ -115,7 +115,7 @@ export default function ContactPage() {
                   <Phone size={24} />
                 </div>
                 <h4 className="text-white font-bold mb-2">Call Us</h4>
-                <p className="text-gray-400">+1 (234) 567-8900</p>
+                <p className="text-gray-400">+91 8805920106</p>
                 <p className="text-gray-400">Mon-Fri, 9am-6pm</p>
               </div>
               
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   <MapPin size={24} />
                 </div>
                 <h4 className="text-white font-bold mb-2">Visit Studio</h4>
-                <p className="text-gray-400">123 Digital Avenue, Tech District<br/>City, State 10001</p>
+                <p className="text-gray-400">Dr.Ambedkar Chowk Gidhadi, Tah.Goregaon, Dist.Gondia <br/>Gondia, Maharashtra 441801</p>
             </div>
 
             {/* Simulated Map */}
