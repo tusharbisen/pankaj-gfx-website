@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import AnimatedButton from "@/components/AnimatedButton";
 import SectionHeading from "@/components/SectionHeading";
+import { whatsappUrl } from "@/config/business";
 
 // Valid slugs for static generation
 const serviceSlugs = [
@@ -15,10 +16,10 @@ const serviceSlugs = [
 // This normally would come from a database or CMS.
 const serviceData: Record<string, { title: string, description: string, details: string, features: string[] }> = {
   "photography": {
-    title: "Professional Photography",
-    description: "Capture the perfect moments with our high-end photography services.",
-    details: "We offer event coverage, product photography, and professional portrait sessions tailored to your brand's unique aesthetics.",
-    features: ["High-Resolution Edits", "Drone Photography", "Studio Setup"]
+    title: "Photography & Videography",
+    description: "Photography for weddings, engagements, birthdays and events.",
+    details: "Discuss the occasion, location, schedule and required deliverables. Final coverage, editing and turnaround are confirmed before booking.",
+    features: ["Event coverage", "Portrait sessions", "Photo editing", "Album assistance"]
   },
   "banner-printing": {
     title: "Banner & Flex Printing",
@@ -33,10 +34,10 @@ const serviceData: Record<string, { title: string, description: string, details:
     features: ["Fast Processing", "Error-Free Drafts", "Payment Handling"]
   },
   "web-development": {
-    title: "Website Development",
-    description: "Your digital storefront, engineered for conversions.",
-    details: "We build modern, responsive, and SEO-optimized websites using Next.js and Tailwind CSS so your business looks great on every device.",
-    features: ["E-Commerce Ready", "SEO Optimized", "Lightning Fast"]
+    title: "Government & Online Service Assistance",
+    description: "Guided assistance with eligible government and online forms.",
+    details: "Pankaj GFX is not a government office. We can explain generally required information and assist with authorized online processes. Approval is decided by the relevant authority.",
+    features: ["PM-Kisan-related assistance", "General online forms", "Document assistance", "Official website guidance"]
   },
   "social-media": {
     title: "Social Media Management",
@@ -81,13 +82,13 @@ export default function IndividualServicePage({ params }: { params: { slug: stri
           </ul>
         </div>
         
-        <div className="p-8 rounded-2xl glass-effect border border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h4 className="text-xl font-bold text-white mb-2">Ready to Book?</h4>
-            <p className="text-gray-400">Contact us today to discuss your project requirements.</p>
+            <h4 className="text-xl font-bold text-[#0F172A] mb-2">Ready to ask?</h4>
+            <p className="text-slate-600">Contact us to discuss availability, requirements and charges.</p>
           </div>
-          <AnimatedButton href="/contact" variant="primary">
-            Request Quote
+          <AnimatedButton href={whatsappUrl(`Hello Pankaj GFX, I am interested in ${service.title}. Please provide information about the process and charges.`)} variant="primary">
+            Ask on WhatsApp
           </AnimatedButton>
         </div>
       </div>

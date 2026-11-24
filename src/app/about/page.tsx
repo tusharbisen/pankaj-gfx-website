@@ -5,12 +5,6 @@ import AnimatedButton from "@/components/AnimatedButton";
 import { CheckCircle } from "lucide-react";
 
 export default function AboutPage() {
-  const stats = [
-    { label: "Projects Completed", value: "500+" },
-    { label: "Happy Clients", value: "200+" },
-    { label: "Years Experience", value: "5+" },
-    { label: "Team Members", value: "12" }
-  ];
 
   return (
     <div className="py-24">
@@ -24,7 +18,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="type-h2 font-bold mb-6">
               Empowering brands through <span className="bg-clip-text text-transparent bg-brand-gradient">Creative Design</span>
             </h2>
             <p className="text-gray-400 text-lg mb-6 leading-relaxed">
@@ -64,26 +58,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="text-center p-6 rounded-2xl glass-effect border border-gray-800"
-            >
-              <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-brand-gradient mb-2">
-                {stat.value}
-              </div>
-              <div className="text-gray-400 font-medium">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
         
       </div>
     </div>

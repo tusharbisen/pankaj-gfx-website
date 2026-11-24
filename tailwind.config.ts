@@ -9,14 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
+        heading: ["var(--font-heading)", "Arial", "sans-serif"],
+        body: ["var(--font-body)", "Arial", "sans-serif"],
+        sans: ["var(--font-body)", "Arial", "sans-serif"],
       },
       colors: {
-        background: "#0B0F19",
-        surface: "#111827",
-        primary: "#7C3AED",
-        secondary: "#3B82F6",
-        foreground: "#f3f4f6",
+        background: "#FFFFFF",
+        surface: "#F8FAFC",
+        primary: "#F59E0B",
+        secondary: "#0F172A",
+        foreground: "#334155",
       },
       backgroundImage: {
         'brand-gradient': 'linear-gradient(to right, #7C3AED, #3B82F6)',

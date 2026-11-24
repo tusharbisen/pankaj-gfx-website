@@ -5,24 +5,18 @@ import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedButton from "@/components/AnimatedButton";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { business, whatsappUrl } from "@/config/business";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormState({ name: "", email: "", message: "" });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 1500);
+    const message = `Hello Pankaj GFX, my name is ${formState.name}. ${formState.message}`;
+    window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
+    setIsSubmitting(false);
   };
 
   return (
@@ -43,15 +37,9 @@ export default function ContactPage() {
           >
             <h3 className="text-2xl font-bold text-white mb-6">Send us a message</h3>
             
-            {submitted ? (
-              <div className="bg-green-500/20 border border-green-500 text-green-400 p-4 rounded-lg mb-6">
-                Thanks for reaching out! We&apos;ll get back to you shortly.
-              </div>
-            ) : null}
-            
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                <label htmlFor="name" className="block text-base font-medium text-gray-400 mb-2">Full Name</label>
                 <input
                   type="text"
                   id="name"
@@ -64,7 +52,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                <label htmlFor="email" className="block text-base font-medium text-gray-400 mb-2">Email Address</label>
                 <input
                   type="email"
                   id="email"
@@ -77,7 +65,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                <label htmlFor="message" className="block text-base font-medium text-gray-400 mb-2">Message</label>
                 <textarea
                   id="message"
                   required
@@ -115,8 +103,8 @@ export default function ContactPage() {
                   <Phone size={24} />
                 </div>
                 <h4 className="text-white font-bold mb-2">Call Us</h4>
-                <p className="text-gray-400">+91 8805920106</p>
-                <p className="text-gray-400">Mon-Fri, 9am-6pm</p>
+                <p className="text-gray-400">{business.phoneDisplay}</p>
+                <p className="text-gray-400">Contact to confirm hours</p>
               </div>
               
               <div className="glass-effect p-6 rounded-2xl border border-gray-800">
@@ -124,8 +112,7 @@ export default function ContactPage() {
                   <Mail size={24} />
                 </div>
                 <h4 className="text-white font-bold mb-2">Email Us</h4>
-                <p className="text-gray-400">hello@pankajgfx.com</p>
-                <p className="text-gray-400">support@pankajgfx.com</p>
+                <p className="text-gray-400">{business.email}</p>
               </div>
             </div>
 
@@ -134,7 +121,7 @@ export default function ContactPage() {
                   <MapPin size={24} />
                 </div>
                 <h4 className="text-white font-bold mb-2">Visit Studio</h4>
-                <p className="text-gray-400">Dr.Ambedkar Chowk Gidhadi, Tah.Goregaon, Dist.Gondia <br/>Gondia, Maharashtra 441801</p>
+                <p className="text-gray-400">{business.address}</p>
             </div>
 
             {/* Simulated Map */}

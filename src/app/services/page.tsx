@@ -2,7 +2,7 @@
 
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import { Camera, Printer, FileText, Monitor, Share2, Video } from "lucide-react";
+import { Camera, Printer, FileText, Palette, Package, Landmark } from "lucide-react";
 import { motion } from "framer-motion";
 
 const allServices = [
@@ -25,21 +25,21 @@ const allServices = [
     slug: "online-form-filling"
   },
   {
-    title: "Website Development",
-    description: "Custom, responsive, and blazing fast websites tailored for your specific business requirements. We build landing pages, corporate sites, and full eCommerce solutions.",
-    icon: <Monitor size={32} />,
-    slug: "web-development"
+    title: "Government & Online Services",
+    description: "Assistance with eligible government and online application forms. Official approval and fees are decided only by the relevant authority.",
+    icon: <Landmark size={32} />,
+    slug: "online-form-filling"
   },
   {
-    title: "Social Media Management",
-    description: "Strategic content creation and management to aggressively grow your digital footprint. We handle posting schedules, engagement, and organic growth.",
-    icon: <Share2 size={32} />,
-    slug: "social-media"
+    title: "Graphic Design",
+    description: "Wedding invitations, banners, posters, visiting cards and custom social media designs.",
+    icon: <Palette size={32} />,
+    slug: "video-making"
   },
   {
-    title: "Video & Poster Making",
-    description: "Engaging promotional videos and eye-catching posters guaranteed to capture your audience's attention. Perfect for ad campaigns and social sharing.",
-    icon: <Video size={32} />,
+    title: "Thermocol & Event Designs",
+    description: "Custom lettering, name boards and decorative designs for events and celebrations.",
+    icon: <Package size={32} />,
     slug: "video-making"
   }
 ];
@@ -54,8 +54,8 @@ export default function ServicesPage() {
           className="mb-16 text-center"
         >
           <SectionHeading 
-            title="Our Digital Services" 
-            subtitle="Comprehensive solutions designed to elevate your brand and drive results." 
+            title="Our Services" 
+            subtitle="Photography, printing, design and practical digital assistance." 
           />
         </motion.div>
         

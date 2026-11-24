@@ -3,23 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --background: #0B0F19;
-  --foreground: #f3f4f6;
+  --background: #FFFFFF;
+  --foreground: #334155;
 }
 
 body {
   color: var(--foreground);
   background-color: var(--background);
+  font-size: clamp(1rem, 0.98rem + 0.12vw, 1.0625rem);
+  line-height: 1.6;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), Arial, sans-serif;
+    line-height: 1.2;
+  }
+}
+
+@layer utilities {
+  .type-h1 {
+    font-size: clamp(2rem, 1.2rem + 3.56vw, 3.5rem);
+  }
+
+  .type-h2 {
+    font-size: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  }
+
+  .type-h3 {
+    font-size: clamp(1.25rem, 1.1rem + 0.67vw, 1.5rem);
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  .glass-effect {
-    background: rgba(17, 24, 39, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
+  .glass-effect { background: rgba(255,255,255,.96); }
 }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
