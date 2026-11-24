@@ -10,7 +10,7 @@ export const metadata = createPageMetadata(
   "Explore banner, social media, print, branding and video design concepts from Pankaj GFX.",
 );
 
-const ownerPortrait = "/portfolio/owner-portrait-placeholder.svg";
+const ownerPortrait = "/owner_image.jpeg";
 
 const creativeValues = [
   {
@@ -123,13 +123,13 @@ export default function PortfolioPage() {
             <div className="relative aspect-[4/4.2] overflow-hidden bg-slate-100">
               <Image
                 src={ownerPortrait}
-                alt="Illustrative placeholder for the Pankaj GFX owner's portrait"
+                alt="Portrait of the Pankaj GFX owner"
                 fill
                 sizes="(max-width: 1024px) 90vw, 40vw"
                 className="object-cover"
               />
               <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm">
-                Owner portrait placeholder
+                Pankaj GFX owner
               </span>
             </div>
           </div>
@@ -148,7 +148,7 @@ export default function PortfolioPage() {
               <p className="text-sm text-slate-500">Role / Title</p>
             </div>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-600">
-              Name, title and portrait are placeholders for the owner&apos;s details. No personal biography or achievements have been assumed.
+              The name and title can be updated with the owner&apos;s preferred details.
             </p>
             <Link
               href="/contact"
