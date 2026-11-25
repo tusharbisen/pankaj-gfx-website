@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { business } from "@/config/business";
+import { business, whatsappUrl } from "@/config/business";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0F172A] pt-14 pb-24 md:pb-8 mt-20">
+    <footer className="mt-16 bg-[#0F172A] pb-24 pt-14 md:mt-20 md:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand Info */}
           <div>
             <Link href="/" className="inline-block mb-6">
               <span className="text-2xl font-bold text-white">
@@ -17,11 +16,13 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Thoughtful graphic design for creators and businesses, from standout thumbnails to complete brand identities.
+              Creative design, photography, printing and local online service assistance in Gidhadi.
             </p>
+            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-4 py-2.5 font-semibold text-slate-200 transition hover:border-amber-400 hover:text-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400">
+              WhatsApp Us
+            </a>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4">
@@ -46,7 +47,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-4">
@@ -65,21 +65,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
-                <MapPin size={20} className="text-primary shrink-0 mt-1" />
-                <span>{business.address}</span>
+                <MapPin size={20} className="mt-1 shrink-0 text-amber-400" />
+                <Link href="/contact" className="transition-colors hover:text-white">{business.address}</Link>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
-                <Phone size={20} className="text-primary shrink-0" />
-                <span>{business.phoneDisplay}</span>
+                <Phone size={20} className="shrink-0 text-amber-400" />
+                <a href={`tel:+${business.phone}`} className="transition-colors hover:text-white">{business.phoneDisplay}</a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
-                <Mail size={20} className="text-primary shrink-0" />
-                <span>{business.email}</span>
+                <Mail size={20} className="shrink-0 text-amber-400" />
+                <a href={`mailto:${business.email}`} className="break-all transition-colors hover:text-white">{business.email}</a>
               </li>
             </ul>
           </div>

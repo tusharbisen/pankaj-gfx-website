@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { siteMetadata } from "@/components/Seo";
+import { MotionConfig } from "framer-motion";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -30,12 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${sora.variable} ${inter.variable} font-body antialiased bg-background text-foreground flex flex-col min-h-screen`}>
-        <Navbar />
-        <main className="flex-grow pt-20">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
+        <MotionConfig reducedMotion="user">
+          <Navbar />
+          <main className="flex-grow pt-20">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </MotionConfig>
       </body>
     </html>
   );
